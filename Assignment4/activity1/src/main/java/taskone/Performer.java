@@ -63,13 +63,12 @@ class Performer {
                     switch (choice) {
                     	case (0):
                     		quit = true;
-                    		returnMessage = "Quitting";
                         case (1):
                             String inStr = (String) message.get("data");
                             returnMessage = add(inStr);
                             break;
                         case (2):
-                        	returnMessage = "I don't know what I'm doing.";
+                        	//returnMessage = "I don't know what I'm doing.";
                         	break;
                         default:
                             returnMessage = error("Invalid selection: " + choice 
