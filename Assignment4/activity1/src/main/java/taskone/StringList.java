@@ -17,6 +17,7 @@ class StringList {
     public String pop() {
     	String str;
     	str = strings.remove(strings.size()-1);
+    	return str;
     }
 
     public boolean contains(String str) {
