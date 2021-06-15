@@ -43,6 +43,9 @@ class Performer {
     public JSONObject pop() {
     	JSONObject json = new JSONObject();
     	json.put("datatype", 2);
+    	json.put("type", "pop");
+    	state.remove();
+    	json.put("data", state.toString());
     }*/
 
     public static JSONObject error(String err) {
@@ -66,8 +69,9 @@ class Performer {
    
                 int choice = message.getInt("selected");
                     switch (choice) {
-                    	/*case (0):
-                    		quit = true;*/
+                    	case (0):
+                    		quit = true;
+                    	    break;
                         case (1):
                             String inStr = (String) message.get("data");
                             returnMessage = add(inStr);
