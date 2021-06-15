@@ -13,6 +13,11 @@ class StringList {
             strings.add(str);
         }
     }
+    
+    public String pop() {
+    	String str;
+    	str = strings.remove(strings.size()-1);
+    }
 
     public boolean contains(String str) {
         return strings.indexOf(str) >= 0;

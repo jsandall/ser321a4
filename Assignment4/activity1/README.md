@@ -1,6 +1,6 @@
 # Assignment 4 Activity 1
 ## Description
-The initail Performer code only has one function for adding strings to an array: 
+The initial Performer code only has one function for adding strings to an array: 
 
 ## Protocol
 
