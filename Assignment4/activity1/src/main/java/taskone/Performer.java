@@ -39,14 +39,15 @@ class Performer {
         json.put("data", state.toString());
         return json;
     }
-   /* 
+    
     public JSONObject pop() {
     	JSONObject json = new JSONObject();
     	json.put("datatype", 2);
     	json.put("type", "pop");
-    	state.remove();
+    	state.pop();
     	json.put("data", state.toString());
-    }*/
+    	return json;
+    }
 
     public static JSONObject error(String err) {
         JSONObject json = new JSONObject();
@@ -76,9 +77,9 @@ class Performer {
                             String inStr = (String) message.get("data");
                             returnMessage = add(inStr);
                             break;
-                        /*case (2):
-                        	//returnMessage = "I don't know what I'm doing.";
-                        	break;*/
+                        case (2):
+                        	returnMessage = pop();
+                        	break;
                         default:
                             returnMessage = error("Invalid selection: " + choice 
                                     + " is not an option");
