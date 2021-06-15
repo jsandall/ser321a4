@@ -78,7 +78,6 @@ class Performer {
                             returnMessage = add(inStr);
                             break;
                         case (2):
-                        	String inStr1 = (String) message.get("data");
                         	returnMessage = pop();
                         	break;
                         default:
