@@ -74,9 +74,10 @@ class Performer {
     	JSONObject json = new JSONObject();
     	json.put("datatype", 5);
     	json.put("type", "switch");
+    	String[] indexes = str.split(" ");
     	int[] idx = new int[2];
     	for(int i = 0; i < 2; i++)
-    		idx[i] = Integer.parseInt(str);
+    		idx[i] = Integer.parseInt(indexes[0]);
     	System.out.println(state.switching(idx[0], idx[1]).toString());
     	json.put("data", state.toString());
     	return json;
