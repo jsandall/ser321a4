@@ -76,8 +76,7 @@ class Performer {
     	String[] indexes = str.split(" ");
     	int[] idx = new int[2];
     	for(int i = 0; i < 2; i++)
-    		idx[i] = Integer.parseInt(indexes[0]);
-    	System.out.println("first index: " + idx[0] + " | second index: " + idx[1]);
+    		idx[i] = Integer.parseInt(indexes[i]);
     	state.switching(idx[0], idx[1]);
     	json.put("data", state.toString());
     	return json;
