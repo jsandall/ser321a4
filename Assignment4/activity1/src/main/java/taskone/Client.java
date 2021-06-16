@@ -156,6 +156,7 @@ public class Client {
             int choice;
             do {
             	try {
+            		choice = -1;
 	                System.out.println();
 	                System.out.println("Client Menu");
 	                System.out.println("Please select a valid option (1-5). 0 to diconnect the client");
