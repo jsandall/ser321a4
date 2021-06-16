@@ -16,6 +16,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Base64;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -213,7 +214,7 @@ public class Client {
 	                        }
 	                    }
 	            	}
-	            } catch (NumberFormatException nfe) {
+	            } catch (InputMismatchException nfe) {
 	            	System.out.println("Selection must be a number.\nPlease select a valid option (0-6).");
                 }
             } while (true);
