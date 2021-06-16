@@ -156,7 +156,6 @@ public class Client {
             int choice;
             do {
             	try {
-            		choice = -1;
 	                System.out.println();
 	                System.out.println("Client Menu");
 	                System.out.println("Please select a valid option (1-5). 0 to diconnect the client");
@@ -168,6 +167,10 @@ public class Client {
 	                System.out.println("0. quit");
 	                System.out.println();
 	                choice = input.nextInt();
+	            } catch (InputMismatchException nfe) {
+	            	System.out.println("Selection must be a number.\nPlease select a valid option (0-6).");
+	            	continue;
+                }
 	                JSONObject request = null;
 	                switch (choice) {
 	                    case (1):
@@ -215,9 +218,7 @@ public class Client {
 	                        }
 	                    }
 	            	}
-	            } catch (InputMismatchException nfe) {
-	            	System.out.println("Selection must be a number.\nPlease select a valid option (0-6).");
-                }
+
             } while (true);
         } catch (IOException e) {
             e.printStackTrace();
