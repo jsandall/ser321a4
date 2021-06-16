@@ -119,7 +119,7 @@ class Performer {
                         	int index1 = message.getInt("data");
                         	int index2 = message.getInt("data");
                         	returnMessage = swap(index1, index2);
-                        	break
+                        	break;
                         default:
                             returnMessage = error("Invalid selection: " + choice 
                                     + " is not an option");
