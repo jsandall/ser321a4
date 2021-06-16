@@ -72,7 +72,7 @@ class Performer {
     public JSONObject swap(int idx1, int idx2) {
     	JSONObject json = new JSONObject();
     	json.put("datatype", 5);
-    	json.put("type", "swap");
+    	json.put("type", "switch");
     	System.out.println(state.swap(idx1, idx2).toString());
     	json.put("data", state.toString());
     	return json;
