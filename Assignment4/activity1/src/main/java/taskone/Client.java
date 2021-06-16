@@ -154,17 +154,21 @@ public class Client {
             Scanner input = new Scanner(System.in);
             int choice;
             do {
-                System.out.println();
-                System.out.println("Client Menu");
-                System.out.println("Please select a valid option (1-5). 0 to diconnect the client");
-                System.out.println("1. add <string> - adds a string to the list and display it");
-                System.out.println("2. pop - remove the top elemnt");
-                System.out.println("3. display - display the list");
-                System.out.println("4. count - returns the elements in the list");
-                System.out.println("5. switch <int> <int> - switch two string");
-                System.out.println("0. quit");
-                System.out.println();
-                choice = input.nextInt(); // what if not int.. should error handle this
+            	try {
+	                System.out.println();
+	                System.out.println("Client Menu");
+	                System.out.println("Please select a valid option (1-5). 0 to diconnect the client");
+	                System.out.println("1. add <string> - adds a string to the list and display it");
+	                System.out.println("2. pop - remove the top elemnt");
+	                System.out.println("3. display - display the list");
+	                System.out.println("4. count - returns the elements in the list");
+	                System.out.println("5. switch <int> <int> - switch two string");
+	                System.out.println("0. quit");
+	                System.out.println();
+	                choice = input.nextInt();
+            	} catch (NumberFormatException nfe) {
+            		System.out.println("Selection must be a number.");
+            	}
                 JSONObject request = null;
                 switch (choice) {
                     case (1):

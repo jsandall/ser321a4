@@ -29,9 +29,6 @@ class StringList {
     }
     
     public List<String> switching(int i1, int i2) {
-    	//System.out.println("first index: " + i1 + " | second index: " + i2);
-    	//System.out.println("First string: " + strings.get(i1).toString());
-    	//System.out.println("Second string: " + strings.get(i2).toString());
     	int indexes = strings.size() - 1;
     	if (i1 > indexes || i2 > indexes || i1 < 0 || i2 < 0)
     		return null;
@@ -40,7 +37,6 @@ class StringList {
     		strings.set(i1, strings.get(i2));
     		strings.set(i2, temp);
     	}
-    	System.out.println("After swapping: " + strings.toString());
     	return strings;
     }
 
