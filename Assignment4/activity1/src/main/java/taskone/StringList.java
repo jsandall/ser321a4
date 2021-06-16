@@ -20,6 +20,7 @@ class StringList {
     		str = "null";
     	else
     		str = strings.remove(strings.size()-1);
+    	System.out.println(str);
     	return str;
     }
 
