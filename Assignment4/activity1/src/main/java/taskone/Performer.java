@@ -63,7 +63,7 @@ class Performer {
     	json.put("datatype", 4);
     	json.put("type", "count");
     	System.out.println(state.size());
-    	json.put("data", state.size().toString());
+    	json.put("data", (String) state.size());
     	return json;
     }
 
