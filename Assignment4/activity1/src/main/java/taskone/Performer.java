@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONObject;
 
+import com.sun.org.apache.bcel.internal.generic.SWAP;
+
 /**
  * Class: Performer 
  * Description: Threaded Performer for server tasks.
@@ -66,6 +68,15 @@ class Performer {
     	json.put("data", String.valueOf(state.size()));
     	return json;
     }
+    
+    public JSONObject swap(int idx1, int idx2) {
+    	JSONObject json = new JSONObject();
+    	json.put("datatype", 5);
+    	json.put("type", "swap");
+    	System.out.println(state.swap(idx1, idx2).toString());
+    	json.put("data", state.toString());
+    	return json;
+    }
 
     public static JSONObject error(String err) {
         JSONObject json = new JSONObject();
@@ -104,6 +115,11 @@ class Performer {
                         case (4):
                         	returnMessage = count();
                         	break;
+                        case (5):
+                        	int index1 = message.getInt("data");
+                        	int index2 = message.getInt("data");
+                        	returnMessage = swap(index1, index2);
+                        	break
                         default:
                             returnMessage = error("Invalid selection: " + choice 
                                     + " is not an option");

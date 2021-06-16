@@ -23,6 +23,18 @@ class StringList {
     	System.out.println(str);
     	return str;
     }
+    
+    public List<String> swap(int i1, int i2) {
+    	int indexes = strings.size() - 1;
+    	if (i1 > indexes || i2 > indexes || i1 < 0 || i2 < 0)
+    		return null;
+    	else {
+    		String temp = strings.get(i1);
+    		strings.set(i1, strings.get(i2));
+    		strings.set(i2, temp);
+    	}
+    	return strings;
+    }
 
     public boolean contains(String str) {
         return strings.indexOf(str) >= 0;
@@ -34,5 +46,9 @@ class StringList {
 
     public String toString() {
         return strings.toString();
+    }
+    
+    public String get(int index) {
+    	return strings.get(index);
     }
 }
