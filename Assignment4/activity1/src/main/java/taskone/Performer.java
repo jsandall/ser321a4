@@ -74,7 +74,7 @@ class Performer {
     	json.put("datatype", 5);
     	json.put("type", "switch");
     	String[] indexes = str.split(" ");
-    	Systemlout.println("indexes string array: " + indexes);
+    	System.out.println("indexes string array: " + indexes);
     	int[] idx = new int[2];
     	for(int i = 0; i < 2; i++)
     		idx[i] = Integer.parseInt(indexes[0]);
