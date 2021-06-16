@@ -154,8 +154,8 @@ public class Client {
             InputStream in = sock.getInputStream();
             Scanner input = new Scanner(System.in);
             int choice;
-            do {
-            	try {
+            try {
+            	do {
 	                System.out.println();
 	                System.out.println("Client Menu");
 	                System.out.println("Please select a valid option (1-5). 0 to diconnect the client");
@@ -167,10 +167,6 @@ public class Client {
 	                System.out.println("0. quit");
 	                System.out.println();
 	                choice = input.nextInt();
-	            } catch (InputMismatchException nfe) {
-	            	System.out.println("Selection must be a number.\nPlease select a valid option (0-6).");
-	            	continue;
-                }
 	                JSONObject request = null;
 	                switch (choice) {
 	                    case (1):
@@ -219,7 +215,11 @@ public class Client {
 	                    }
 	            	}
 
-            } while (true);
+            	} while (true);
+            } catch (InputMismatchException nfe) {
+            	System.out.println("Selection must be a number.\nPlease select a valid option (0-6).");
+            	continue;
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
