@@ -119,7 +119,7 @@ class Performer {
                         	returnMessage = count();
                         	break;
                         case (5):
-                        	String indexes = message.get("data");
+                        	String indexes = (String) message.get("data");
                         	returnMessage = switching(indexes);
                         	break;
                         default:
