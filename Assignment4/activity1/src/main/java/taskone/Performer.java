@@ -119,7 +119,7 @@ class Performer {
                         	returnMessage = count();
                         	break;
                         case (5):
-                        	int inStr = message.get("data");
+                        	String inStr = message.get("data");
                         	returnMessage = switching(inStr);
                         	break;
                         default:
