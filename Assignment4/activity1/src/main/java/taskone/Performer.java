@@ -70,6 +70,7 @@ class Performer {
     }
     
     public JSONObject switching(String str) {
+    	System.out.println("the input string is: " + str);
     	JSONObject json = new JSONObject();
     	json.put("datatype", 5);
     	json.put("type", "switch");
