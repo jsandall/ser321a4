@@ -89,7 +89,7 @@ class Performer {
                         case (2):
                         	returnMessage = pop();
                         	break;
-                        case (3);
+                        case (3):
                         	returnMessage = display();
                         	break;
                         default:
