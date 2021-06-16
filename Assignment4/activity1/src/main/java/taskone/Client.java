@@ -189,32 +189,32 @@ public class Client {
 	                    default:
 	                        System.out.println("Please select a valid option (0-6).");
 	                        break;
-	                }
-            	} catch (NumberFormatException nfe) {
-	            	System.out.println("Selection must be a number.\nPlease select a valid option (0-6).");
+	                	}
+	                if (request != null) {
+	                    System.out.println(request);
+	                    NetworkUtils.send(out, JsonUtils.toByteArray(request));
+	                    byte[] responseBytes = NetworkUtils.receive(in);
+	                    JSONObject response = JsonUtils.fromByteArray(responseBytes);
+	
+	                    if (response.has("error")) {
+	                        System.out.println(response.getString("error"));
+	                    } else {
+	                        System.out.println();
+	                        System.out.println("The response from the server: ");
+	                        System.out.println("datatype: " + response.getString("type"));
+	                        System.out.println("data: " + response.getString("data"));
+	                        System.out.println();
+	                        String typeStr = (String) response.getString("type");
+	                        if (typeStr.equals("quit")) {
+	                            sock.close();
+	                            out.close();
+	                            in.close();
+	                            System.exit(0);
+	                        }
+	                    }
 	            	}
-                if (request != null) {
-                    System.out.println(request);
-                    NetworkUtils.send(out, JsonUtils.toByteArray(request));
-                    byte[] responseBytes = NetworkUtils.receive(in);
-                    JSONObject response = JsonUtils.fromByteArray(responseBytes);
-
-                    if (response.has("error")) {
-                        System.out.println(response.getString("error"));
-                    } else {
-                        System.out.println();
-                        System.out.println("The response from the server: ");
-                        System.out.println("datatype: " + response.getString("type"));
-                        System.out.println("data: " + response.getString("data"));
-                        System.out.println();
-                        String typeStr = (String) response.getString("type");
-                        if (typeStr.equals("quit")) {
-                            sock.close();
-                            out.close();
-                            in.close();
-                            System.exit(0);
-                        }
-                    }
+	            } catch (NumberFormatException nfe) {
+	            	System.out.println("Selection must be a number.\nPlease select a valid option (0-6).");
                 }
             } while (true);
         } catch (IOException e) {
