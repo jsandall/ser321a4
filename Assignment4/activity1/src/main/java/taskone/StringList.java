@@ -24,7 +24,7 @@ class StringList {
     	return str;
     }
     
-    public List<String> swap(int i1, int i2) {
+    public List<String> change(int i1, int i2) {
     	int indexes = strings.size() - 1;
     	if (i1 > indexes || i2 > indexes || i1 < 0 || i2 < 0)
     		return null;

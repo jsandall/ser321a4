@@ -69,11 +69,11 @@ class Performer {
     	return json;
     }
     
-    public JSONObject swap(int idx1, int idx2) {
+    public JSONObject change(int idx1, int idx2) {
     	JSONObject json = new JSONObject();
     	json.put("datatype", 5);
     	json.put("type", "switch");
-    	System.out.println(state.swap(idx1, idx2).toString());
+    	System.out.println(state.change(idx1, idx2).toString());
     	json.put("data", state.toString());
     	return json;
     }
@@ -118,7 +118,7 @@ class Performer {
                         case (5):
                         	int index1 = message.getInt("data");
                         	int index2 = message.getInt("data");
-                        	returnMessage = swap(index1, index2);
+                        	returnMessage = change(index1, index2);
                         	break;
                         default:
                             returnMessage = error("Invalid selection: " + choice 
