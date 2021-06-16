@@ -166,33 +166,33 @@ public class Client {
 	                System.out.println("0. quit");
 	                System.out.println();
 	                choice = input.nextInt();
+	                JSONObject request = null;
+	                switch (choice) {
+	                    case (1):
+	                        request = add();
+	                        break;
+	                    case (2):
+	                        request = pop();
+	                        break;
+	                    case (3):
+	                        request = display();
+	                        break;
+	                    case (4):
+	                        request = count();
+	                        break;
+	                    case (5):
+	                        request = switching();
+	                        break;
+	                    case (0):
+	                        request = quit();
+	                        break;
+	                    default:
+	                        System.out.println("Please select a valid option (0-6).");
+	                        break;
+	                }
             	} catch (NumberFormatException nfe) {
-            		System.out.println("Selection must be a number.");
-            	}
-                JSONObject request = null;
-                switch (choice) {
-                    case (1):
-                        request = add();
-                        break;
-                    case (2):
-                        request = pop();
-                        break;
-                    case (3):
-                        request = display();
-                        break;
-                    case (4):
-                        request = count();
-                        break;
-                    case (5):
-                        request = switching();
-                        break;
-                    case (0):
-                        request = quit();
-                        break;
-                    default:
-                        System.out.println("Please select a valid option (0-6).");
-                        break;
-                }
+	            	System.out.println("Selection must be a number.\nPlease select a valid option (0-6).");
+	            	}
                 if (request != null) {
                     System.out.println(request);
                     NetworkUtils.send(out, JsonUtils.toByteArray(request));
