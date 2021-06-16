@@ -90,7 +90,8 @@ class Performer {
                         	returnMessage = pop();
                         	break;
                         case (3);
-                        	
+                        	returnMessage = display();
+                        	break;
                         default:
                             returnMessage = error("Invalid selection: " + choice 
                                     + " is not an option");
