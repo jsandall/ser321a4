@@ -5,7 +5,11 @@ import java.util.ArrayList;
 
 class StringList {
     
-    List<String> strings = new ArrayList<String>();
+    List<String> strings;
+    
+    public StringList() {
+    	this.strings = new ArrayList<String>();
+    }
 
     public void add(String str) {
         int pos = strings.indexOf(str);
@@ -33,6 +37,7 @@ class StringList {
     		strings.set(i1, strings.get(i2));
     		strings.set(i2, temp);
     	}
+    	System.out.println("After swapping: " + strings.toString());
     	return strings;
     }
 

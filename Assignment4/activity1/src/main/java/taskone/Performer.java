@@ -25,7 +25,7 @@ import org.json.JSONObject;
  */
 class Performer {
 
-    private StringList state;
+    private StringList state = new StringList();
     private Socket conn;
 
     public Performer(Socket sock, StringList strings) {
@@ -70,7 +70,6 @@ class Performer {
     }
     
     public JSONObject switching(String str) {
-    	System.out.println("the input string is: " + str);
     	JSONObject json = new JSONObject();
     	json.put("datatype", 5);
     	json.put("type", "switch");
@@ -78,7 +77,7 @@ class Performer {
     	int[] idx = new int[2];
     	for(int i = 0; i < 2; i++)
     		idx[i] = Integer.parseInt(indexes[0]);
-    	System.out.println(state.switching(idx[0], idx[1]).toString());
+    	state.switching(idx[0], idx[1]);
     	json.put("data", state.toString());
     	return json;
     }
