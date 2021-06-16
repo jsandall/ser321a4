@@ -62,7 +62,7 @@ class Performer {
     	JSONObject json = new JSONObject();
     	json.put("datatype", 4);
     	json.put("type", "count");
-    	System.out.println(state.size());
+    	System.out.println("Count: " + state.size());
     	json.put("data", String.valueOf(state.size()));
     	return json;
     }

@@ -16,7 +16,10 @@ class StringList {
     
     public String pop() {
     	String str;
-    	str = strings.remove(strings.size()-1);
+    	if (size() == 0)
+    		str = "null";
+    	else
+    		str = strings.remove(strings.size()-1);
     	return str;
     }
 
