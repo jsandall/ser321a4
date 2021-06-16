@@ -119,8 +119,8 @@ class Performer {
                         	returnMessage = count();
                         	break;
                         case (5):
-                        	String inStr = message.get("data");
-                        	returnMessage = switching(inStr);
+                        	String indexes = message.get("data");
+                        	returnMessage = switching(indexes);
                         	break;
                         default:
                             returnMessage = error("Invalid selection: " + choice 
