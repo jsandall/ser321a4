@@ -165,12 +165,13 @@ public class Client {
 	                System.out.println("5. switch <int> <int> - switch two string");
 	                System.out.println("0. quit");
 	                System.out.println();
-	                //try {
+	                try {
 	                	choice = input.nextInt();
-	                //} catch (InputMismatchException ime) {
-	                //	System.out.println("Selection must be a number.");
-	                //	choice = 9;
-	                //}
+	                } catch (InputMismatchException ime) {
+	                	System.out.println("Selection must be a number.");
+	                	choice = 9;
+	                	input.nextLine();
+	                }
 	                JSONObject request = null;
 	                switch (choice) {
 	                    case (1):
