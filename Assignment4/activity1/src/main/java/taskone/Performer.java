@@ -57,6 +57,15 @@ class Performer {
     	json.put("data", state.toString());
     	return json;
     }
+    
+    public JSONObject count() {
+    	JSONObject json = new JSONObject();
+    	json.put("datatype", 4);
+    	json.put("type", "count");
+    	System.out.println(state.size());
+    	json.put("data", state.size());
+    	return json;
+    }
 
     public static JSONObject error(String err) {
         JSONObject json = new JSONObject();
@@ -91,6 +100,9 @@ class Performer {
                         	break;
                         case (3):
                         	returnMessage = display();
+                        	break;
+                        case (4):
+                        	returnMessage = count();
                         	break;
                         default:
                             returnMessage = error("Invalid selection: " + choice 
