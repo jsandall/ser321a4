@@ -218,7 +218,6 @@ public class Client {
             	} while (true);
             } catch (InputMismatchException nfe) {
             	System.out.println("Selection must be a number.\nPlease select a valid option (0-6).");
-            	continue;
             }
         } catch (IOException e) {
             e.printStackTrace();
