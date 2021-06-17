@@ -23,7 +23,7 @@ import org.json.JSONObject;
  * Class: Performer 
  * Description: Threaded Performer for server tasks.
  */
-class Performer {
+public class Performer {
 
     private StringList state = new StringList();
     private Socket conn;
