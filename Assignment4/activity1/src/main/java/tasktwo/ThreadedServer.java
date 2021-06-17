@@ -28,15 +28,14 @@ class ThreadedServer extends Thread {
 	
 	private Socket conn;
 	private int id;
-    StringList strings = new StringList();
+    private static StringList strings;
 	
 	public ThreadedServer(Socket sock, int id) {
 		this.conn = sock;
-		this .id = id;
+		this.id = id;
 	}
 	
 	public void run() {
-        StringList strings = new StringList();
         Performer performer = new Performer(conn, strings);
         performer.doPerform();
         try {
@@ -51,6 +50,7 @@ class ThreadedServer extends Thread {
     	Socket sock;
     	int id = 0;
         int port;
+        strings = new StringList();
 
         if (args.length != 1) {
             // gradle runServer -Pport=9099 -q --console=plain
