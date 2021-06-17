@@ -28,6 +28,7 @@ class ThreadedServer extends Thread {
 	
 	private Socket conn;
 	private int id;
+    StringList strings = new StringList();
 	
 	public ThreadedServer(Socket sock, int id) {
 		this.conn = sock;
